@@ -1,5 +1,9 @@
 <div class="whole">
-  <h1 class="heading">Ratting App </h1>
+  <!-- Logout Button -->
+  <button class="logout-btn" (click)="logout()">Logout</button>
+
+  <h1 class="heading">Ratting App</h1>
+  
 
   <div class="ratting">
     <span
@@ -23,31 +27,27 @@
         [(ngModel)]="message"
       ></textarea>
 
-      <button (click)="submitMessage()" class="myButton" *ngIf="name.length>0">Send</button>
-      <p class="comment-display"><strong>{{comment}}</strong></p>
-
+      <button (click)="submitMessage()" class="myButton" *ngIf="name.length > 0">
+        Send
+      </button>
+      <p class="comment-display"><strong>{{ comment }}</strong></p>
 
       <div class="posted-section">
-
-  
-
         <h2 class="posted-heading">Message Command Posted</h2>
         <div class="message-boxs">
-         <p *ngFor="let item of messages">
-  <!-- ⭐ Stars before name -->
-   
-  <span class="star-display">
-    <span *ngFor="let i of stars">
-      <span *ngIf="i <= item.rating" class="filled">&#9733;</span>
-      <span *ngIf="i > item.rating" class="empty">&#9733;</span>
-    </span>
-  </span>
+          <p *ngFor="let item of messages">
+            <!-- ⭐ Stars before name -->
+            <span class="star-display">
+              <span *ngFor="let i of stars">
+                <span *ngIf="i <= item.rating" class="filled">&#9733;</span>
+                <span *ngIf="i > item.rating" class="empty">&#9733;</span>
+              </span>
+            </span>
 
-  <span class="comment-text">
-  <strong>{{ item.name }}:</strong> {{ item.comment }}
-</span>
-</p>
-
+            <span class="comment-text">
+              <strong>{{ item.name }}:</strong> {{ item.comment }}
+            </span>
+          </p>
         </div>
       </div>
     </div>

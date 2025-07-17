@@ -180,3 +180,18 @@
   margin: 0;
 }
 
+.back-login {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.back-login a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.back-login a:hover {
+  color: #00bcd4;
+}

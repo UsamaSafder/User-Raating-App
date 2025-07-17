@@ -11,16 +11,17 @@
 
         <!-- Email Field -->
         <label for="email">Email</label>
-       <input
-  type="email"
-  id="email"
-  name="email"
-  ngModel
-  required
-  email
-  (input)="resetEmailExists()"  
-  #emailRef="ngModel"
-/>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          ngModel
+          required
+          email
+          (input)="resetEmailExists()"  
+          #emailRef="ngModel"
+        />
+
         <!-- Email Error Messages -->
         <div *ngIf="emailRef.invalid && emailRef.touched" style="color: red; font-size: 13px;">
           <div *ngIf="emailRef.errors?.['required']">Email is required.</div>
@@ -31,27 +32,34 @@
         <div *ngIf="emailExists" style="color: red; font-size: 13px;">
           This email is already registered.
         </div>
-<label for="password">Password</label>
-<input
-  type="password"
-  id="password"
-  name="password"
-  ngModel
-  required
-  minlength="6"
-  #passwordRef="ngModel"
-/>
 
-<!-- Password Error Messages -->
-<div *ngIf="passwordRef.invalid && passwordRef.touched" style="color: red; font-size: 13px;">
-  <div *ngIf="passwordRef.errors?.['required']">Password is required.</div>
-  <div *ngIf="passwordRef.errors?.['minlength']">
-    Password must be at least 6 characters.
-  </div>
-</div>
+        <!-- Password Field -->
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          ngModel
+          required
+          minlength="6"
+          #passwordRef="ngModel"
+        />
+
+        <!-- Password Error Messages -->
+        <div *ngIf="passwordRef.invalid && passwordRef.touched" style="color: red; font-size: 13px;">
+          <div *ngIf="passwordRef.errors?.['required']">Password is required.</div>
+          <div *ngIf="passwordRef.errors?.['minlength']">
+            Password must be at least 6 characters.
+          </div>
+        </div>
 
         <!-- Submit Button -->
         <button type="submit" [disabled]="Signup.invalid">Register</button>
+
+        <!-- Go Back to Login -->
+        <div style="margin-top: 10px;">
+          <button routerLink="/Login" class="go-back-button">Go Back to Login</button>
+        </div>
       </div>
     </form>
   </div>

@@ -3,11 +3,13 @@ import { HttpClient } from '@angular/common/http'; // ✅ Missing
 import { Api } from '../services/api';
 import { FormsModule, NgModel } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
+import {  RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-app',
   standalone: true,
-  imports: [FormsModule,NgIf,NgFor],
+  imports: [FormsModule,NgIf,NgFor,RouterLink],
   templateUrl: './main-app.html',
   styleUrl: './main-app.css'
 })
@@ -21,7 +23,7 @@ export class MainApp {
   messages: { name: string; comment: string; rating: number }[] = [];
 
   // ✅ Inject both HttpClient and Api
-  constructor(private http: HttpClient, private api: Api) {
+  constructor(private http: HttpClient, private api: Api,private router: Router) {
     this.loadReviews(); 
   }
 
@@ -81,6 +83,12 @@ submitMessage() {
   });
 }
 
+
+logout() {
+  // Clear user session, localStorage, etc.
+  localStorage.clear();
+  this.router.navigate(['/Login']); // or your login route
+}
 
 
   // ✅ Load all reviews from backend
