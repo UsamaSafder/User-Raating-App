@@ -16,4 +16,9 @@ export class Api {
     return this.http.post(url, data);
   }
 
+  GetLoginData(data:any){
+     const url = "https://hmftj.com/interns/UApi/login.php";
+    return this.http.post(url, data);
+  }
+
 }

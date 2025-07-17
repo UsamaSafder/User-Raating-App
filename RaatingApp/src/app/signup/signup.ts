@@ -16,18 +16,22 @@ export class Signup {
   addDetails(form: NgForm) {
     const formData = form.value;
     this.api.PostSignUpData(formData).subscribe({
-      next: response => {
-        console.log('Signup response:', response);
-        // Optionally navigate or show a message here
+      next:  (response: any) => {
+        if (response.error) {
+       
+        console.log('SignUp error:', response.error);
+      } else {
+        console.log('SignUp successful:', response);
+        this.router.navigate(['/Login']);
+        }
+       
       },
       error: err => {
         console.error('Signup error:', err);
-        // Optionally show an error message to the user
+    
       }
     });
   }
 
-    goToLoginPage() {
-    this.router.navigate(['/Login']);
-  }
+    
 }
