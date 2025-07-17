@@ -21,4 +21,9 @@ export class Api {
     return this.http.post(url, data);
   }
 
+  GetComments(data:any){
+    const url="https://hmftj.com/interns/UApi/submit_rating.php";
+    return this.http.get(url,data);
+  }
+
 }

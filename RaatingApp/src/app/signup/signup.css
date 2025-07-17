@@ -1,0 +1,182 @@
+/* Gradient full background */
+.form-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #141e30, #243b55);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Frosted Glass Container */
+.signup-form {
+  width: 100%;
+  max-width: 420px;
+  padding: 50px 30px 40px;
+  background: rgba(255, 255, 255, 0.08); /* subtle glass effect */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  position: relative;
+  animation: fadeSlide 0.8s ease;
+  color: #ffffff;
+}
+
+/* Top Heading - Centered */
+.form-heading {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffda77;
+  color: #243b55;
+  padding: 10px 25px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  cursor: default;
+}
+
+/* Heading hover effect */
+.form-heading:hover {
+  transform: translateX(-50%) scale(1.05);
+  background-color: #ffc94a;
+}
+
+/* Labels */
+.signup-form label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: #eaeaea;
+}
+
+/* Inputs */
+.signup-form input {
+  width: 95%;
+  padding: 8px 12px; /* Reduced padding */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 14px; /* Slightly smaller font */
+  margin-bottom: 15px; /* Less space between inputs */
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.signup-form input:focus {
+  border-color: #ffda77;
+  box-shadow: 0 0 8px rgba(255, 218, 119, 0.5); /* Softer glow */
+}
+
+
+/* Button */
+.signup-form button {
+  width: fit-content; /* Instead of 100% */
+  padding: 10px 25px; /* Slightly smaller padding */
+  background: #ffda77;
+  color: #243b55;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 218, 119, 0.4);
+  transition: all 0.3s ease-in-out;
+  display: block;           /* Ensure it can be centered */
+  margin: 20px auto 0 auto; /* Center horizontally */
+}
+
+
+.signup-form button:hover {
+  background-color: #ffc94a;
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 218, 119, 0.5);
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .signup-form {
+    padding: 40px 25px 30px;
+  }
+
+  .form-heading {
+    font-size: 20px;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-form {
+    padding: 30px 20px 25px;
+  }
+
+  .form-heading {
+    font-size: 18px;
+    top: -24px;
+  }
+}
+
+/* NEW: Center header + form together */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.app-info {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeSlide 1s ease;
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 22px;
+  }
+
+  .app-subtitle {
+    font-size: 14px;
+  }
+}
+.app-header {
+  text-align: center;
+  margin-bottom: 100px; /* Increased spacing below the header */
+  animation: fadeSlide 1s ease;
+}
+
+
+.app-title {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.app-subtitle {
+  font-size: 18px;
+  color: #ffda77;
+  margin: 0;
+}
+

@@ -7,5 +7,5 @@ export const routes: Routes = [
     { path: 'Login', component: Login },
     { path: 'Signup', component: Signup }, // <-- Add this line
     {path:'Main',component:MainApp},
-    { path: '', redirectTo: 'Signup', pathMatch: 'full' } // Optional: default to signup
+    { path: '', redirectTo: 'Login', pathMatch: 'full' } // Optional: default to signup
 ];

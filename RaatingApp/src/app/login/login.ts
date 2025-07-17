@@ -1,37 +1,45 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Api } from '../services/api';
-import { Router } from '@angular/router';
-import { routes } from '../app.routes';
+import { Router, RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [FormsModule,RouterLink,NgIf],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
 export class Login {
+  errorMessage: string = '';
+
   constructor(private api: Api, private router: Router) {}
 
-  
-AddLogin(form: NgForm) {
-  const data = form.value;
-  this.api.GetLoginData(data).subscribe({
-    next: (response: any) => {
-      if (response.error) {
-        // Show error to user
-        console.log('Login error:', response.error);
-      } else {
-        console.log('Login successful:', response);
-        this.router.navigate(['/Main']);
+  AddLogin(form: NgForm) {
+    const data = form.value;
+    this.errorMessage = ''; // Reset error message before each request
+
+    this.api.GetLoginData(data).subscribe({
+      next: (response: any) => {
+        if (response.error) {
+          // Show proper error message
+          this.errorMessage = response.error === 'Email not found'
+            ? 'Email does not exist. Please sign up first.'
+            : 'Invalid email or password.';
+        } else {
+          console.log('Login successful:', response);
+          this.router.navigate(['/Main']);
+        }
+      },
+      error: err => {
+        console.log('Login failed:', err);
+        this.errorMessage = 'Something went wrong. Please try again.';
       }
-    },
-    error: err => {
-      console.log('Error: Login not successful', err);
-    }
-  });
-}
+    });
+  }
 
-  
-
+  resetGmail() {
+    this.errorMessage='';
+  }
 }

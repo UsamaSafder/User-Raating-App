@@ -1,0 +1,174 @@
+/* Full screen center wrapper */
+.form-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #141e30, #243b55);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container to stack header and form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Text */
+.app-header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.app-title {
+  font-size: 32px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.app-subtitle {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+/* Frosted Glass Login Form Box */
+.login-form {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 420px;
+  color: white;
+}
+
+/* Heading Inside the Form */
+.form-heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Labels */
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.login-form label:hover {
+  color: #00c9a7;
+}
+
+/* Inputs */
+.login-form input {
+  width: 95%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+.login-form input:focus,
+.login-form input:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px #00c9a7;
+}
+
+/* Placeholder color */
+.login-form input::placeholder {
+  color: #ddd;
+}
+
+/* Submit Button */
+.login-form button {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00c9a7;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 201, 167, 0.3);
+}
+
+.login-form button:hover {
+  background-color: #00b89f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 201, 167, 0.4);
+}
+
+/* Error Messages */
+.error-message {
+  color: #ff6666;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+/* Signup Link */
+.signup-redirect {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.signup-redirect:hover {
+  color: #00c9a7;
+}
+
+.signup-link-btn {
+  color: #00c9a7;
+  text-decoration: underline;
+  margin-left: 4px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.signup-link-btn:hover {
+  color: #afbbb9;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 24px;
+    color: yellow;
+  }
+
+  .app-subtitle {
+    font-size: 14px;
+  }
+
+  .login-form {
+    padding: 24px 20px;
+  }
+
+  .login-form button {
+    width: 100%;
+    font-size: 15px;
+  }
+}
