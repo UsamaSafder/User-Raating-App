@@ -199,6 +199,11 @@ text-shadow: -1px 4px 5px rgba(238, 9, 9, 0.92);
 
 
 @media (max-width: 768px) {
+    .comment-display {
+  font-size: 14px;
+  padding: 8px 10px;
+  max-width: 95%;
+}
  
   .heading {
     font-size: 30px;
@@ -250,4 +255,20 @@ text-shadow: -1px 4px 5px rgba(238, 9, 9, 0.92);
   .comment-text {
     font-size: 14px;
   }
+}
+
+
+.comment-display {
+  background-color: #ffefc5;
+  color: #5c4200;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-left: 5px solid #ffb100;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 80%;
 }

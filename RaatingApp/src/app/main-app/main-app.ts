@@ -12,6 +12,7 @@ import { NgFor, NgIf } from '@angular/common';
   styleUrl: './main-app.css'
 })
 export class MainApp {
+  comment='';
   StarNumber = 0;
   name = '';
   message = '';
@@ -48,10 +49,12 @@ submitMessage() {
   }
 
   const review = {
-    email: email, // Always use logged-in email
+  //  email: email, // Always use logged-in email
     name: this.name,
     rating: this.StarNumber,
-    comment: this.message.trim()
+    comment: this.message.trim(),
+     email: localStorage.getItem('email'),
+  password: localStorage.getItem('password')
   };
 
   console.log('Review to be sent:', review);
@@ -72,6 +75,7 @@ submitMessage() {
     },
     error: (err) => {
       console.error('Submit failed:', err);
+       this.comment='Comment Already Posted Try new Account';
       alert('Failed to submit review. Try again.');
     }
   });
