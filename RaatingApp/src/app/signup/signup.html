@@ -1,1 +1,23 @@
-<p>signup works!</p>
+<form #Signup="ngForm" (ngSubmit)="addDetails(Signup)">
+  <div>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      ngModel
+      required
+    />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      ngModel
+      required
+    />
+  </div>
+  <button (click)=" goToLoginPage()">Sign Up</button>
+</form>
