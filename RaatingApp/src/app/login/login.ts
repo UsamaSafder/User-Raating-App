@@ -20,23 +20,28 @@ export class Login {
     const data = form.value;
     this.errorMessage = ''; // Reset error message before each request
 
-    this.api.GetLoginData(data).subscribe({
-      next: (response: any) => {
-        if (response.error) {
-          // Show proper error message
-          this.errorMessage = response.error === 'Email not found'
-            ? 'Email does not exist. Please sign up first.'
-            : 'Invalid email or password.';
-        } else {
-          console.log('Login successful:', response);
-          this.router.navigate(['/Main']);
-        }
-      },
-      error: err => {
-        console.log('Login failed:', err);
-        this.errorMessage = 'Something went wrong. Please try again.';
-      }
-    });
+   this.api.GetLoginData(data).subscribe({
+  next: (response: any) => {
+    if (response.error) {
+      this.errorMessage = response.error === 'Email not found'
+        ? 'Email does not exist. Please sign up first.'
+        : 'Invalid email or password.';
+    } else {
+      console.log('Login successful:', response);
+      console.log('Login Response:', response.email);
+
+     localStorage.setItem('email', response?.email || data.email);
+     localStorage.setItem('password', data.email); 
+
+
+      this.router.navigate(['/Main']);
+    }
+  },
+  error: err => {
+    console.log('Login failed:', err);
+    this.errorMessage = 'Something went wrong. Please try again.';
+  }
+});
   }
 
   resetGmail() {

@@ -16,14 +16,19 @@ export class Api {
     return this.http.post(url, data);
   }
 
-  GetLoginData(data:any){
-     const url = "https://hmftj.com/interns/UApi/login.php";
-    return this.http.post(url, data);
-  }
+ GetLoginData(data: any): Observable<any> {
+  const url = "https://hmftj.com/interns/UApi/login.php";
+  return this.http.post<any>(url, data);
+}
 
-  GetComments(data:any){
-    const url="https://hmftj.com/interns/UApi/submit_rating.php";
-    return this.http.get(url,data);
-  }
+  GetComments(): Observable<any> {
+  const url = "https://hmftj.com/interns/UApi/submit_rating.php"; // or your GET endpoint
+  return this.http.get(url); // ✅ No body
+}
+
+PostComment(data: any): Observable<any> {
+  const url = "https://hmftj.com/interns/UApi/submit_rating.php";
+  return this.http.post(url, data);
+}
 
 }
