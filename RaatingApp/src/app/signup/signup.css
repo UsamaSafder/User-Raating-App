@@ -76,7 +76,6 @@
   box-shadow: 0 0 8px rgba(255, 218, 119, 0.5); /* Softer glow */
 }
 
-
 /* Button */
 .signup-form button {
   width: fit-content; /* Instead of 100% */
@@ -90,10 +89,9 @@
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(255, 218, 119, 0.4);
   transition: all 0.3s ease-in-out;
-  display: block;           /* Ensure it can be centered */
+  display: block; /* Ensure it can be centered */
   margin: 20px auto 0 auto; /* Center horizontally */
 }
-
 
 .signup-form button:hover {
   background-color: #ffc94a;
@@ -126,32 +124,32 @@
 }
 
 @media (max-width: 480px) {
+  .form-wrapper {
+    padding: 10px;           /* Reduce padding */
+    box-sizing: border-box;
+    overflow-x: hidden;      /* Prevent horizontal scroll */
+  }
+
   .signup-form {
-    padding: 30px 20px 25px;
+    width: 100%;             /* Full width for small screens */
+    max-width: 100%;         /* Prevent overflow */
+    padding: 24px 16px;      /* Adjust padding for mobile */
+    margin: 0 auto;          /* Ensure horizontal centering */
+    box-sizing: border-box;
   }
 
   .form-heading {
     font-size: 18px;
-    top: -24px;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
   }
-}
 
-/* NEW: Center header + form together */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .app-header {
+    margin-bottom: 60px;
+  }
 
-
-
-.app-info {
-  text-align: center;
-  margin-bottom: 30px;
-  animation: fadeSlide 1s ease;
-}
-
-@media (max-width: 480px) {
   .app-title {
     font-size: 22px;
   }
@@ -160,12 +158,27 @@
     font-size: 14px;
   }
 }
+
+
+/* NEW: Center header + form together */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-info {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeSlide 1s ease;
+}
+
+
 .app-header {
   text-align: center;
   margin-bottom: 100px; /* Increased spacing below the header */
   animation: fadeSlide 1s ease;
 }
-
 
 .app-title {
   font-size: 36px;

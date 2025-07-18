@@ -154,6 +154,19 @@
 
 /* Responsive Design */
 @media (max-width: 480px) {
+  .form-wrapper {
+    padding: 10px; /* Reduce padding on small screens */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  .login-form {
+    padding: 24px 16px;
+    width: 100%;
+    max-width: 100%; /* Ensures it doesn't exceed screen */
+    margin: 0 auto; /* Center the box */
+    box-sizing: border-box; /* Respect padding */
+  }
+
   .app-title {
     font-size: 24px;
     color: yellow;
@@ -161,10 +174,6 @@
 
   .app-subtitle {
     font-size: 14px;
-  }
-
-  .login-form {
-    padding: 24px 20px;
   }
 
   .login-form button {

@@ -22,8 +22,8 @@ export class Api {
 }
 
   GetComments(): Observable<any> {
-  const url = "https://hmftj.com/interns/UApi/submit_rating.php"; // or your GET endpoint
-  return this.http.get(url); // ✅ No body
+  const url = "https://hmftj.com/interns/UApi/submit_rating.php";
+  return this.http.get(url); 
 }
 
 PostComment(data: any): Observable<any> {

@@ -51,12 +51,12 @@ submitMessage() {
   }
 
   const review = {
-  //  email: email, // Always use logged-in email
+  
     name: this.name,
     rating: this.StarNumber,
     comment: this.message.trim(),
      email: localStorage.getItem('email'),
-  password: localStorage.getItem('password')
+  // password: localStorage.getItem('password')
   };
 
   console.log('Review to be sent:', review);
@@ -73,7 +73,15 @@ submitMessage() {
         (star as HTMLElement).style.color = 'white';
       });
 
-      this.loadReviews(); // Refresh list
+      
+      this.loadReviews();
+
+setTimeout(() => {
+  const container = document.querySelector('.message-boxs');
+  if (container) {
+    container.scrollTop = container.scrollHeight;
+  }
+}, 200); 
     },
     error: (err) => {
       console.error('Submit failed:', err);
