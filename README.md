@@ -1,5 +1,4 @@
-# User Raating App
----
+
 
 # User Rating App (Angular)
 
